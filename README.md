@@ -1,5 +1,10 @@
 Need To Run:
 - php artisan livewire:publish --assets
+
+Luzon1 = close jam 16:30 wib / result jam 16:45 wib
+Luzon2 = close jam 18:30 wib / result jam 18:45 wib
+Luzon3 = close jam 21:30 wib / result jam 21:45 wib
+Luzon4 = close jam 00:30 wib / result jam 00:45
   
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 

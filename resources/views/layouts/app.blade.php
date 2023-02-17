@@ -21,7 +21,7 @@
                 <div class="flex flex-col flex-grow pt-5 overflow-y-auto bg-[#2C343F] h-[100vh]">
                     <div class="w-full pt-10">
                         <div class="flex items-center justify-center flex-shrink-0 px-4 mb-4">
-                            <img class="w-auto h-20" src="{{ asset('images/mystery.png') }}" alt="Huston Lottery">
+                            <img class="w-full" src="{{ asset('images/luzon_logo.png') }}" alt="Luzonpools">
                         </div>
 
                         <div class="w-full text-sm text-center text-white sm:text-lg">
@@ -40,7 +40,7 @@
                                     class="flex items-center justify-center w-10 mr-3 text-2xl {{ \Request::route()->getName() === 'dashboard' ? 'text-white' : 'text-[#276FCE]' }}">
                                     <i class="fa-solid fa-award"></i>
                                 </div>
-                                List All Voucher
+                                List All Result
                             </a>
 
                             {{-- <a href="{{ route('reward') }}"
@@ -50,7 +50,7 @@
                                     <i class="fa-solid fa-gifts"></i>
                                 </div>
                                 Reward
-                            </a>
+                            </a> --}}
 
                             <a href="{{ route('profile') }}"
                                 class="flex items-center px-2 py-2 text-sm font-medium text-white rounded-md group {{ \Request::route()->getName() === 'profile' ? 'bg-[#5D90D2]' : '' }}">
@@ -59,7 +59,7 @@
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                                 Profile
-                            </a> --}}
+                            </a>
                         </nav>
                     </div>
                 </div>
