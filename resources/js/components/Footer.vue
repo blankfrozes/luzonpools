@@ -4,8 +4,8 @@
       <div
         class="w-full flex justify-center gap-x-4 text-[#777] [&>a:hover]:text-white text-sm mb-4"
       >
-        <a href="">Contact Us</a>
-        <a href="">About Us</a>
+        <a href="/contact-us">Contact Us</a>
+        <a href="/about-us">About Us</a>
       </div>
 
       <div

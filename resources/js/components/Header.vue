@@ -27,7 +27,7 @@ const closeNavMobile = () => {
 
 <template>
   <div class="w-full">
-    <header class="w-full border-b-[3px] bg-secondary border-primary fixed z-20">
+    <header class="w-full border-b-[3px] bg-secondary border-primary fixed z-50">
       <div
         class="flex items-center w-full px-4 text-white lg:px-0 lg:container lg:mx-auto gap-x-4"
       >
@@ -89,12 +89,12 @@ const closeNavMobile = () => {
         style="background-image: url('images/bg_banner.jpg')"
       ></div>
 
-      <h1
+      <h2
         class="container mx-auto text-3xl tracking-wide text-white relative z-20 text-center font-semibold pt-64 pb-64"
         style="text-shadow: 2px 2px #000"
       >
         Welcome To Luzonpools
-      </h1>
+      </h2>
     </div>
   </div>
 </template>
