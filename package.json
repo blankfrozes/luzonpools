@@ -22,6 +22,8 @@
         "@morev/vue-transitions": "^2.3.6",
         "@vitejs/plugin-vue": "^4.0.0",
         "@vueuse/core": "^9.12.0",
+        "click-outside-vue3": "^4.0.1",
+        "dayjs": "^1.11.7",
         "vue": "^3.2.36",
         "vue-loader": "^17.0.1",
         "vue-router": "^4.1.6"

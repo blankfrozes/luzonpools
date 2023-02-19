@@ -18,6 +18,20 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+              primary: 'rgb(var(--color-primary) / <alpha-value>)',
+              secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+            },
+            container: {
+              padding: {
+                DEFAULT: '10px',
+                sm: '10px',
+                md: '10px',
+                lg: '0',
+                xl: '0',
+                '2xl': '0',
+              },
+            },
         },
     },
 

@@ -1,3 +1,3 @@
 <template>
-  <div>Home</div>
+  <div class="w-full">Home</div>
 </template>

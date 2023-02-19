@@ -10,6 +10,8 @@ specifiers:
   alpinejs: ^3.0.6
   autoprefixer: ^10.4.7
   axios: ^1.1.2
+  click-outside-vue3: ^4.0.1
+  dayjs: ^1.11.7
   laravel-vite-plugin: ^0.7.2
   lodash: ^4.17.19
   postcss: ^8.4.14
@@ -23,6 +25,8 @@ dependencies:
   '@morev/vue-transitions': 2.3.6_vue@3.2.36
   '@vitejs/plugin-vue': 4.0.0_vite@4.1.1+vue@3.2.36
   '@vueuse/core': 9.12.0_vue@3.2.36
+  click-outside-vue3: 4.0.1
+  dayjs: 1.11.7
   vue: 3.2.36
   vue-loader: 17.0.1_vue@3.2.36
   vue-router: 4.1.6_vue@3.2.36
@@ -914,6 +918,11 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /click-outside-vue3/4.0.1:
+    resolution: {integrity: sha512-sbplNecrup5oGqA3o4bo8XmvHRT6q9fvw21Z67aDbTqB9M6LF7CuYLTlLvNtOgKU6W3zst5H5zJuEh4auqA34g==}
+    engines: {node: '>=6'}
+    dev: false
+
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -969,6 +978,10 @@ packages:
 
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
+    dev: false
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: false
 
   /debug/4.3.4:
