@@ -1,7 +1,9 @@
 <template>
   <div class="w-full">
     <div class="w-full mb-8 text-secondary">
-      <h1 class="w-full mb-2 text-2xl font-semibold">Welcome To The Penang45 Lottery</h1>
+      <h1 class="w-full mb-2 text-2xl font-semibold">
+        Welcome To The Luzonpools Lottery
+      </h1>
 
       <div class="w-full text-sm">
         The New Lottery Ticket Is The Website You Are Looking For. In Many Games, You Can

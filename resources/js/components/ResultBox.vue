@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
 import dayjs from "dayjs";
 
 const props = defineProps({
@@ -8,10 +7,8 @@ const props = defineProps({
   },
 });
 
-const result = props.result;
-
-const starterPrizes = result.starter.split(",");
-const consolationPrizes = result.consolation.split(",");
+const starterPrize = props.result.starter.split(",");
+const consolationPrize = props.result.consolation.split(",");
 </script>
 
 <template>
@@ -63,7 +60,7 @@ const consolationPrizes = result.consolation.split(",");
         <div
           class="w-full grid grid-cols-3 gap-2 font-semibold [&>div]:py-2 [&>div]:px-2 [&>div]:bg-white [&>div]:rounded-sm"
         >
-          <div v-for="(starter, i) in starterPrizes" :key="i">
+          <div v-for="(starter, i) in starterPrize" :key="i">
             {{ starter }}
           </div>
         </div>
@@ -77,7 +74,7 @@ const consolationPrizes = result.consolation.split(",");
         <div
           class="w-full grid grid-cols-3 gap-2 font-semibold [&>div]:py-2 [&>div]:px-2 [&>div]:bg-white [&>div]:rounded-sm"
         >
-          <div v-for="(consolation, i) in consolationPrizes" :key="i">
+          <div v-for="(consolation, i) in consolationPrize" :key="i">
             {{ consolation }}
           </div>
         </div>
