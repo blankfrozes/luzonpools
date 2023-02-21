@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import { ref, reactive } from "vue";
+import dayjs from "dayjs";
+
+const props = defineProps({
+  result: {
+    type: Object,
+  },
+});
+
+const result = props.result;
+
+const starterPrizes = result.starter.split(",");
+const consolationPrizes = result.consolation.split(",");
+</script>
+
 <template>
   <div class="bg-secondary">
     <div class="flex items-center justify-between w-full px-3 py-3 bg-primary gap-x-4">
@@ -6,8 +22,9 @@
       </div>
 
       <div class="flex-1 text-sm text-right text-white">
-        Sunday, 19 Februari 2023<br />
-        Draw No: 1234
+        {{ dayjs(result.created_at).format("dddd, DD MMMM YYYY HH:mm") }}
+        (GMT+8)<br />
+        Draw No: {{ result.periode }}
       </div>
     </div>
 
@@ -18,7 +35,7 @@
         >
           <div class="flex-1 flex-shrink-0 px-2 py-2 text-white bg-primary">PRIZE 1</div>
 
-          <div class="w-1/3 px-2 py-2">1234</div>
+          <div class="w-1/3 px-2 py-2">{{ result.first }}</div>
         </div>
 
         <div
@@ -26,7 +43,7 @@
         >
           <div class="flex-1 flex-shrink-0 px-2 py-2 text-white bg-primary">PRIZE 2</div>
 
-          <div class="w-1/3 px-2 py-2">1234</div>
+          <div class="w-1/3 px-2 py-2">{{ result.second }}</div>
         </div>
 
         <div
@@ -34,7 +51,7 @@
         >
           <div class="flex-1 flex-shrink-0 px-2 py-2 text-white bg-primary">PRIZE 3</div>
 
-          <div class="w-1/3 px-2 py-2">1234</div>
+          <div class="w-1/3 px-2 py-2">{{ result.third }}</div>
         </div>
       </div>
 
@@ -46,12 +63,9 @@
         <div
           class="w-full grid grid-cols-3 gap-2 font-semibold [&>div]:py-2 [&>div]:px-2 [&>div]:bg-white [&>div]:rounded-sm"
         >
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
+          <div v-for="(starter, i) in starterPrizes" :key="i">
+            {{ starter }}
+          </div>
         </div>
       </div>
 
@@ -63,12 +77,9 @@
         <div
           class="w-full grid grid-cols-3 gap-2 font-semibold [&>div]:py-2 [&>div]:px-2 [&>div]:bg-white [&>div]:rounded-sm"
         >
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
-          <div>1234</div>
+          <div v-for="(consolation, i) in consolationPrizes" :key="i">
+            {{ consolation }}
+          </div>
         </div>
       </div>
     </div>

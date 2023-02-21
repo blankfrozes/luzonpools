@@ -39,13 +39,13 @@ const closeNavMobile = () => {
 
         <div class="items-center flex-1 hidden lg:flex gap-x-6">
           <nav class="flex justify-start flex-1">
-            <a href="" :class="navClass">Monday</a>
-            <a href="" :class="navClass">Tuesday</a>
-            <a href="" :class="navClass">Wednesday</a>
-            <a href="" :class="navClass">Thursday</a>
-            <a href="" :class="navClass">Friday</a>
-            <a href="" :class="navClass">Saturday</a>
-            <a href="" :class="navClass">Sunday</a>
+            <a href="/result/monday" :class="navClass">Monday</a>
+            <a href="/result/tuesday" :class="navClass">Tuesday</a>
+            <a href="/result/wednesday" :class="navClass">Wednesday</a>
+            <a href="/result/thursday" :class="navClass">Thursday</a>
+            <a href="/result/friday" :class="navClass">Friday</a>
+            <a href="/result/saturday" :class="navClass">Saturday</a>
+            <a href="/result/sunday" :class="navClass">Sunday</a>
           </nav>
 
           <div class="text-sm">{{ clockText }}</div>
@@ -69,13 +69,13 @@ const closeNavMobile = () => {
           v-click-outside="closeNavMobile"
         >
           <nav class="w-full flex flex-col justify-start [*$>a]:">
-            <a href="" :class="navClass">Monday</a>
-            <a href="" :class="navClass">Tuesday</a>
-            <a href="" :class="navClass">Wednesday</a>
-            <a href="" :class="navClass">Thursday</a>
-            <a href="" :class="navClass">Friday</a>
-            <a href="" :class="navClass">Saturday</a>
-            <a href="" :class="navClass">Sunday</a>
+            <a href="/result/monday" :class="navClass">Monday</a>
+            <a href="/result/tuesday" :class="navClass">Tuesday</a>
+            <a href="/result/wednesday" :class="navClass">Wednesday</a>
+            <a href="/result/thursday" :class="navClass">Thursday</a>
+            <a href="/result/friday" :class="navClass">Friday</a>
+            <a href="/result/saturday" :class="navClass">Saturday</a>
+            <a href="/result/sunday" :class="navClass">Sunday</a>
           </nav>
 
           <div class="px-3 py-4 text-sm xl:px-4">{{ clockText }}</div>

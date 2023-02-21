@@ -1,8 +1,20 @@
 <script setup lang="ts">
+import { ref, reactive } from "vue";
 import { useRoute } from "vue-router";
 import ResultBox from "@/components/ResultBox.vue";
 
 const route = useRoute();
+
+const result = reactive({
+  id: 1,
+  periode: "2548",
+  first: "2548",
+  second: "3458",
+  third: "7751",
+  starter: "8374,1281,2644,5915,4304,6733",
+  consolation: "2036,4785,2002,7550,4644,2694",
+  created_at: "2021-01-01 07:00:00",
+});
 </script>
 
 <template>
@@ -13,7 +25,7 @@ const route = useRoute();
 
         <div class="w-full flex justify-center">
           <div class="w-full max-w-lg">
-            <ResultBox />
+            <ResultBox :result="result" />
           </div>
         </div>
       </div>
