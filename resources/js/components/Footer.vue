@@ -11,17 +11,17 @@
       <div
         class="w-full flex flex-wrap justify-center items-center gap-y-2 gap-x-4 [&>img]:h-8"
       >
-        <img src="images/apple.png" alt="ios" />
-        <img src="images/android.png" alt="android" />
-        <img src="images/visa.png" alt="visa" />
-        <img src="images/master.png" alt="master" />
-        <img src="images/maestro.png" alt="maestro" />
-        <img src="images/e_pro.png" alt="e_pro" />
-        <img src="images/cashlib.jpg" alt="cashlib" />
-        <img src="images/neteller.png" alt="neteller" />
-        <img src="images/age.png" alt="age_restriction" />
-        <img src="images/spam.png" alt="anti_spam" />
-        <img src="images/nospyware.png" alt="nospyware" />
+        <img src="/images/apple.png" alt="ios" />
+        <img src="/images/android.png" alt="android" />
+        <img src="/images/visa.png" alt="visa" />
+        <img src="/images/master.png" alt="master" />
+        <img src="/images/maestro.png" alt="maestro" />
+        <img src="/images/e_pro.png" alt="e_pro" />
+        <img src="/images/cashlib.jpg" alt="cashlib" />
+        <img src="/images/neteller.png" alt="neteller" />
+        <img src="/images/age.png" alt="age_restriction" />
+        <img src="/images/spam.png" alt="anti_spam" />
+        <img src="/images/nospyware.png" alt="nospyware" />
       </div>
     </div>
 

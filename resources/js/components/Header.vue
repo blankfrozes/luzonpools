@@ -33,7 +33,7 @@ const closeNavMobile = () => {
       >
         <div>
           <a href="/" class="block">
-            <img src="images/luzon_logo.png" alt="Luzonpools" class="w-44 xl:w-52" />
+            <img src="/images/luzon_logo.png" alt="Luzonpools" class="w-44 xl:w-52" />
           </a>
         </div>
 
@@ -54,7 +54,7 @@ const closeNavMobile = () => {
         <div class="flex justify-end flex-1 lg:hidden">
           <div class="relative w-8 py-3" @click="toogleNavMobile">
             <img
-              src="images/menu.svg"
+              :src="showNavMobile ? '/images/menu_alt.svg' : '/images/menu.svg'"
               alt="nav"
               class="w-full cursor-pointer fill-white"
             />
@@ -86,7 +86,7 @@ const closeNavMobile = () => {
     <div class="w-full relative">
       <div
         class="w-full bg-center bg-no-repeat bg-cover blur-sm absolute z-10 top-0 left-0 h-full"
-        style="background-image: url('images/bg_banner.jpg')"
+        style="background-image: url('/images/bg_banner.jpg')"
       ></div>
 
       <h2
