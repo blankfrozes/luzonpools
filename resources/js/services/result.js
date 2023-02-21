@@ -19,3 +19,13 @@ export const getResultById = async (id) => {
     throw error;
   }
 };
+
+export const getResultByDay = async (day) => {
+  try {
+    const {data: results} = await axios.post(`/api/v1/result/day`, {day: day});
+
+    return results;
+  } catch (error) {
+    throw error;
+  }
+};

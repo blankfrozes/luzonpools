@@ -2,38 +2,27 @@
 import { ref, reactive } from "vue";
 import { useRoute } from "vue-router";
 import ResultBox from "@/components/ResultBox.vue";
+import { useAsyncState } from "@vueuse/core";
+import { getResultByDay } from "@/services/result.js";
 
 const route = useRoute();
 
-const result = reactive({
-  id: 1,
-  periode: "2548",
-  first: "2548",
-  second: "3458",
-  third: "7751",
-  starter: "8374,1281,2644,5915,4304,6733",
-  consolation: "2036,4785,2002,7550,4644,2694",
-  created_at: "2021-01-01 07:00:00",
-});
+const { state: results, isReady } = useAsyncState(getResultByDay(route.params.day), {});
 </script>
 
 <template>
   <section class="w-full">
     <div class="container mx-auto my-4 shadow-lg">
       <div class="w-full px-4 py-6 text-secondary">
-        <div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
-          <ResultBox :result="result" />
+        <div
+          class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+          v-if="isReady"
+        >
+          <ResultBox
+            v-for="result in results['data']"
+            :key="result['id']"
+            :result="result"
+          />
         </div>
       </div>
     </div>
