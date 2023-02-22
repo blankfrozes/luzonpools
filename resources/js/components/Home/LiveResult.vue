@@ -1,17 +1,35 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
-import ResultBox from "@/components/ResultBox.vue";
+import LiveResultBox from "@/components/LiveResultBox.vue";
+import { useAsyncState } from "@vueuse/core";
+import { getLivedrawResult } from "@/services/livedraw.js";
 
-const liveResult = reactive({
-  id: 1,
-  periode: "2548",
-  first: "2548",
-  second: "3458",
-  third: "7751",
-  starter: "8374,1281,2644,5915,4304,6733",
-  consolation: "2036,4785,2002,7550,4644,2694",
-  created_at: "2021-01-01 07:00:00",
-});
+const { state: liveResult, isReady } = useAsyncState(getLivedrawResult(), {});
+
+// const liveResult = reactive({
+//   id: 1,
+//   periode: "2548",
+//   grandPrize: ["2", "5", null, null],
+//   secondPrize: ["3", "4", "5", "8"],
+//   thirdPrize: ["7", "7", "5", "1"],
+//   starter: [
+//     ["8", "3", "7", "4"],
+//     ["1", "2", "8", "1"],
+//     ["2", "6", "4", "4"],
+//     ["5", "9", "1", "5"],
+//     ["4", "3", "0", "4"],
+//     ["6", "7", "3", "3"],
+//   ],
+//   consolation: [
+//     ["2", "0", "3", "6"],
+//     ["4", "7", "8", "5"],
+//     ["2", "0", "0", "2"],
+//     ["7", "5", "5", "0"],
+//     ["4", "6", "4", "4"],
+//     ["2", "6", "9", "4"],
+//   ],
+//   created_at: "2023-02-22 07:00:00",
+// });
 </script>
 
 <template>
@@ -21,8 +39,8 @@ const liveResult = reactive({
         Result Every Day At 16:45 / 18.45 / 21.45 / 00.45 PM (GMT+8)
       </h3>
 
-      <div class="w-full">
-        <ResultBox :result="liveResult" />
+      <div class="w-full" v-if="isReady">
+        <LiveResultBox :result="liveResult" />
       </div>
     </div>
 

@@ -48,7 +48,9 @@ const lastPage = computed({
 
 <template>
   <div class="w-full mb-8 text-secondary">
-    <div class="w-full mb-4 text-2xl font-semibold text-center">All Day Result</div>
+    <div class="w-full mb-4 text-2xl font-semibold text-center">
+      All Day Result
+    </div>
 
     <table
       class="w-full overflow-hidden text-sm font-semibold text-center rounded-md shadow-lg table-fixed [&_td]:border [&_td]:px-2 [&_td]:py-2 [&_th]:px-2 [&_th]:py-2 mb-6"
@@ -63,8 +65,11 @@ const lastPage = computed({
         </tr>
       </thead>
 
-      <tbody>
-        <tr class="even:bg-gray-100 !bg-opacity-60" v-for="result in resultLists">
+      <tbody v-if="isReady">
+        <tr
+          class="even:bg-gray-100 !bg-opacity-60"
+          v-for="result in resultLists"
+        >
           <td>
             {{ dayjs(result.created_at).format("dddd, DD MMMM YYYY HH:mm") }}
             (GMT+8)
@@ -73,22 +78,48 @@ const lastPage = computed({
           <td>{{ result.second }}</td>
           <td>{{ result.third }}</td>
           <td>
-            <a :href="`/detail/${result.id}`" class="text-primary hover:text-black"
+            <a
+              :href="`/detail/${result.id}`"
+              class="text-primary hover:text-black"
               >View</a
             >
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody v-else>
+        <tr
+          class="even:bg-gray-100 !bg-opacity-60 animate-pulse"
+          text-center
+          v-for="i in 10"
+        >
+          <td>
+            <div class="inline-block w-40 py-2 rounded-sm bg-slate-300"></div>
+          </td>
+          <td>
+            <div class="inline-block py-2 rounded-sm w-14 bg-slate-300"></div>
+          </td>
+          <td>
+            <div class="inline-block py-2 rounded-sm w-14 bg-slate-300"></div>
+          </td>
+          <td>
+            <div class="inline-block py-2 rounded-sm w-14 bg-slate-300"></div>
+          </td>
+          <td>
+            <div class="inline-block py-2 rounded-sm w-14 bg-slate-300"></div>
           </td>
         </tr>
       </tbody>
     </table>
 
     <div
-      class="flex flex-wrap items-center justify-center w-full md:justify-between gap-x-4 gap-y-4 relative"
+      class="relative flex flex-wrap items-center justify-center w-full md:justify-between gap-x-4 gap-y-4"
     >
       <div
-        class="flex justify-start gap-x-2 md:gap-x-4 sm:absolute z-20 sm:top-0 sm:left-0 text-xs sm:text-sm md:text-base"
+        class="z-20 flex justify-start text-xs gap-x-2 md:gap-x-4 sm:absolute sm:top-0 sm:left-0 sm:text-sm md:text-base"
       >
         <button
-          class="px-4 py-2 md:py-3 bg-gray-100 rounded-full hover:bg-gray-300"
+          class="px-4 py-2 bg-gray-100 rounded-full md:py-3 hover:bg-gray-300"
           @click="execute(0, { page: 1 })"
         >
           First Page
@@ -96,7 +127,7 @@ const lastPage = computed({
 
         <button
           v-if="currentPage > 1"
-          class="px-4 py-2 md:py-3 bg-gray-100 rounded-full hover:bg-gray-300"
+          class="px-4 py-2 bg-gray-100 rounded-full md:py-3 hover:bg-gray-300"
           @click="execute(0, { page: currentPage - 1 })"
         >
           Previous
@@ -110,7 +141,9 @@ const lastPage = computed({
         <button
           v-for="i in pagination.total"
           :key="i"
-          :class="currentPage == i + pagination.first ? '!bg-primary text-white' : ''"
+          :class="
+            currentPage == i + pagination.first ? '!bg-primary text-white' : ''
+          "
           @click="execute(0, { page: i + pagination.first })"
         >
           {{ i + pagination.first }}
@@ -118,18 +151,18 @@ const lastPage = computed({
       </div>
 
       <div
-        class="flex justify-start gap-x-2 md:gap-x-4 sm:absolute z-20 sm:top-0 sm:right-0 text-xs sm:text-sm md:text-base"
+        class="z-20 flex justify-start text-xs gap-x-2 md:gap-x-4 sm:absolute sm:top-0 sm:right-0 sm:text-sm md:text-base"
       >
         <button
           v-if="currentPage < lastPage"
-          class="px-4 py-2 md:py-3 bg-gray-100 rounded-full hover:bg-gray-300"
+          class="px-4 py-2 bg-gray-100 rounded-full md:py-3 hover:bg-gray-300"
           @click="execute(0, { page: currentPage + 1 })"
         >
           Next Page
         </button>
 
         <button
-          class="px-4 py-2 md:py-3 bg-gray-100 rounded-full hover:bg-gray-300"
+          class="px-4 py-2 bg-gray-100 rounded-full md:py-3 hover:bg-gray-300"
           @click="execute(0, { page: lastPage })"
         >
           Last Page
