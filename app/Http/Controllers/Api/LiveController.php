@@ -168,12 +168,12 @@ class LiveController extends Controller
     {
         $response = $this->setFirstLiveDraw();
 
-        CheckTime::checkFirstLiveDraw(1800) ? $this->setLiveDrawToComplete('morning') : null;
+        CheckTime::checkFirstLiveDraw(900) ? $this->setLiveDrawToComplete() : null;
 
         return response()->json($response);
     }
 
-    protected function setLiveDrawToComplete($resultTime)
+    protected function setLiveDrawToComplete()
     {
         return Result::where([
             'complete' => 0,
