@@ -62,7 +62,7 @@ class LiveController extends Controller
         return null;
     }
 
-    protected function setFirstLiveDraw(){
+    protected function setLiveDraw(){
         return [
             'consolation' => [
                 [
@@ -166,7 +166,7 @@ class LiveController extends Controller
 
     public function livedraw(): JsonResponse
     {
-        $response = $this->setFirstLiveDraw();
+        $response = $this->setLiveDraw();
 
         CheckTime::checkFirstLiveDraw(900) ? $this->setLiveDrawToComplete() : null;
 
