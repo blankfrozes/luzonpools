@@ -16,7 +16,7 @@ const props = defineProps({
       <looping-rhombuses-spinner
         :animation-duration="1000"
         :size="14"
-        color="#216900"
+        color="#003481"
       />
     </div>
   </div>
