@@ -19,7 +19,7 @@ const props = defineProps({
       </div>
 
       <div class="flex-1 text-sm text-right text-white">
-        {{ dayjs(result.created_at).format("dddd, DD MMMM YYYY HH:mm") }}
+        {{ dayjs(result.date).format("dddd, DD MMMM YYYY HH:mm") }}
         (GMT+8)<br />
         Draw No: {{ result.periode }}
       </div>
