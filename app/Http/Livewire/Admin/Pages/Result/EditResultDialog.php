@@ -16,9 +16,9 @@ class EditResultDialog extends Component
     public $date = "";
 
     protected array $rules = [
-        'prize.first' => 'required|numeric',
-        'prize.second' => 'required|numeric',
-        'prize.third' => 'required|numeric',
+        'prize.first' => 'required|numeric|max_digits:4',
+        'prize.second' => 'required|numeric|max_digits:4',
+        'prize.third' => 'required|numeric|max_digits:4',
     ];
     protected array $validationAttributes = [
         'prize.first' => 'first',
@@ -47,7 +47,6 @@ class EditResultDialog extends Component
                 'second' => $this->prize['second'],
                 'third' => $this->prize['third'],
                 'created_at' => Carbon::parse($this->date),
-                'updated_at' => Carbon::now(),
             ]);
         } catch (\Exception $e) {
             return $this->dispatchBrowserEvent('flash', ['type' => 'error', 'message' => 'Terjadi Kesalahan Mohon Ulangi Kembali!']);

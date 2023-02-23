@@ -12,7 +12,7 @@ const consolationPrize = props.result.consolation.split(",");
 </script>
 
 <template>
-  <div class="bg-secondary">
+  <div class="overflow-hidden rounded-lg bg-secondary">
     <div
       class="flex items-center justify-between w-full px-3 py-3 bg-primary gap-x-4"
     >

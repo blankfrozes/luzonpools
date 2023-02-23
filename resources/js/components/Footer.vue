@@ -1,6 +1,6 @@
 <template>
   <footer class="w-full bg-secondary">
-    <div class="container mx-auto pt-4 pb-8">
+    <div class="container pt-4 pb-8 mx-auto">
       <div
         class="w-full flex justify-center gap-x-4 text-[#777] [&>a:hover]:text-white text-sm mb-4"
       >
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="w-full bg-[#111111]">
+    <div class="w-full bg-[#2a2a2a]">
       <div class="container mx-auto py-4 text-center text-[#777] text-sm">
         &copy; Copyright Luzonpools.com. All Right Reserved. | 18+
       </div>

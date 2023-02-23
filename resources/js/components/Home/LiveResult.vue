@@ -26,22 +26,25 @@ const { state: liveResult, isReady } = useAsyncState(getLivedrawResult(), {});
 
       <div class="flex flex-wrap justify-start w-full gap-y-2">
         <a href="" class="block w-full"
-          ><img src="/images/vip.jpg" alt="vip" class="w-full"
+          ><img src="/images/viva.webp" alt="viva" class="w-full"
         /></a>
         <a href="" class="block w-full lg:w-1/2"
           ><img
-            src="/images/captaincookscasino.gif"
-            alt="captaincookscasino"
+            src="/images/friday_funda.webp"
+            alt="friday_funda"
             class="w-full"
         /></a>
         <a href="" class="block w-full lg:w-1/2"
-          ><img src="/images/titan.gif" alt="titan" class="w-full"
+          ><img src="/images/bonus.webp" alt="bonus" class="w-full"
         /></a>
         <a href="" class="block w-full lg:w-1/2"
-          ><img src="/images/noble.gif" alt="noble" class="w-full"
+          ><img src="/images/win_streak.webp" alt="win_streak" class="w-full"
         /></a>
         <a href="" class="block w-full lg:w-1/2"
-          ><img src="/images/virgingames.gif" alt="virgingames" class="w-full"
+          ><img
+            src="/images/weekly_rolling.webp"
+            alt="weekly_rolling"
+            class="w-full"
         /></a>
       </div>
     </div>

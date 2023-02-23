@@ -55,7 +55,7 @@ const lastPage = computed({
     <table
       class="w-full overflow-hidden text-sm font-semibold text-center rounded-md shadow-lg table-fixed [&_td]:border [&_td]:px-2 [&_td]:py-2 [&_th]:px-2 [&_th]:py-2 mb-6"
     >
-      <thead class="text-white bg-secondary">
+      <thead class="text-white bg-primary">
         <tr>
           <th class="w-[45%] md:w-[35%]">Date</th>
           <th>Prize 1</th>

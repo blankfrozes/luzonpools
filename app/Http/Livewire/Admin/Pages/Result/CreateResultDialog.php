@@ -14,9 +14,9 @@ class CreateResultDialog extends Component
 
     protected array $rules = [
         'prize.periode' =>'required|numeric|integer',
-        'prize.first' => 'required|numeric',
-        'prize.second' => 'required|numeric',
-        'prize.third' => 'required|numeric',
+        'prize.first' => 'required|numeric|max_digits:4',
+        'prize.second' => 'required|numeric|max_digits:4',
+        'prize.third' => 'required|numeric|max_digits:4',
     ];
     protected array $validationAttributes = [
         'prize.periode' =>'periode',
@@ -33,9 +33,9 @@ class CreateResultDialog extends Component
 
         $this->date = $dt->format('Y-m-d');
         $this->prize['periode'] = $periode;
-        $this->prize['first'] = rand(100000,999999);
-        $this->prize['second'] = rand(100000,999999);
-        $this->prize['third'] = rand(100000,999999);
+        $this->prize['first'] = random_int(1000,9999);
+        $this->prize['second'] = random_int(1000,9999);
+        $this->prize['third'] = random_int(1000,9999);
 
         $this->initializing = false;
     }
@@ -54,7 +54,6 @@ class CreateResultDialog extends Component
                 'consolation' => random_int(1000, 9999) . "," . random_int(1000, 9999) . "," . random_int(1000, 9999) .  "," . random_int(1000, 9999) . "," . random_int(1000, 9999) . "," .random_int(1000, 9999),
                 'complete' => 0,
                 'created_at' => Carbon::parse($this->date),
-                'updated_at' => Carbon::now()
             ]);
         } catch (\Exception $e) {
             return $this->dispatchBrowserEvent('flash', ['type' => 'error', 'message' => 'Terjadi Kesalahan Mohon Ulangi Kembali!']);

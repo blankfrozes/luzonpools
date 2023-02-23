@@ -9,7 +9,7 @@ body {
 
 @layer base {
     :root {
-        --color-primary: 33 105 0;
-        --color-secondary: 34 34 34;
+        --color-primary: 0 52 129;
+        --color-secondary: 17 17 17;
     }
 }

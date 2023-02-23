@@ -27,13 +27,19 @@ const closeNavMobile = () => {
 
 <template>
   <div class="w-full">
-    <header class="w-full border-b-[3px] bg-secondary border-primary fixed z-50">
+    <header
+      class="w-full border-b-[3px] bg-secondary border-primary fixed z-50"
+    >
       <div
         class="flex items-center w-full px-4 text-white lg:px-0 lg:container lg:mx-auto gap-x-4"
       >
         <div>
           <a href="/" class="block">
-            <img src="/images/luzon_logo.png" alt="Luzonpools" class="w-44 xl:w-52" />
+            <img
+              src="/images/luzon_logo.png"
+              alt="Luzonpools"
+              class="w-44 xl:w-52"
+            />
           </a>
         </div>
 
@@ -83,14 +89,14 @@ const closeNavMobile = () => {
       </transition-slide>
     </header>
 
-    <div class="w-full relative">
+    <div class="relative w-full">
       <div
-        class="w-full bg-center bg-no-repeat bg-cover blur-sm absolute z-10 top-0 left-0 h-full"
-        style="background-image: url('/images/bg_banner.jpg')"
+        class="absolute top-0 left-0 z-10 w-full h-full bg-center bg-no-repeat bg-cover blur-sm"
+        style="background-image: url('/images/bg_banner.webp')"
       ></div>
 
       <h2
-        class="container mx-auto text-3xl tracking-wide text-white relative z-20 text-center font-semibold pt-64 pb-64"
+        class="container relative z-20 pt-64 pb-64 mx-auto text-3xl font-semibold tracking-wide text-center text-white"
         style="text-shadow: 2px 2px #000"
       >
         Welcome To Luzonpools
