@@ -5,31 +5,6 @@ import { useAsyncState } from "@vueuse/core";
 import { getLivedrawResult } from "@/services/livedraw.js";
 
 const { state: liveResult, isReady } = useAsyncState(getLivedrawResult(), {});
-
-// const liveResult = reactive({
-//   id: 1,
-//   periode: "2548",
-//   grandPrize: ["2", "5", null, null],
-//   secondPrize: ["3", "4", "5", "8"],
-//   thirdPrize: ["7", "7", "5", "1"],
-//   starter: [
-//     ["8", "3", "7", "4"],
-//     ["1", "2", "8", "1"],
-//     ["2", "6", "4", "4"],
-//     ["5", "9", "1", "5"],
-//     ["4", "3", "0", "4"],
-//     ["6", "7", "3", "3"],
-//   ],
-//   consolation: [
-//     ["2", "0", "3", "6"],
-//     ["4", "7", "8", "5"],
-//     ["2", "0", "0", "2"],
-//     ["7", "5", "5", "0"],
-//     ["4", "6", "4", "4"],
-//     ["2", "6", "9", "4"],
-//   ],
-//   created_at: "2023-02-22 07:00:00",
-// });
 </script>
 
 <template>

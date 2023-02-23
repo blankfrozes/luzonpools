@@ -35,9 +35,7 @@ const props = defineProps({
           </div>
 
           <div class="flex items-center justify-center w-1/3 px-2 py-2">
-            <div v-for="(first, i) in result.grandPrize" :key="i">
-              <Number :number="first" />
-            </div>
+            <Number :number="result.grandPrize" />
           </div>
         </div>
 
@@ -49,9 +47,7 @@ const props = defineProps({
           </div>
 
           <div class="flex items-center justify-center w-1/3 px-2 py-2">
-            <div v-for="(second, i) in result.secondPrize" :key="i">
-              <Number :number="second" />
-            </div>
+            <Number :number="result.secondPrize" />
           </div>
         </div>
 
@@ -63,9 +59,7 @@ const props = defineProps({
           </div>
 
           <div class="flex items-center justify-center w-1/3 px-2 py-2">
-            <div v-for="(third, i) in result.thirdPrize" :key="i">
-              <Number :number="third" />
-            </div>
+            <Number :number="result.thirdPrize" />
           </div>
         </div>
       </div>
@@ -85,9 +79,7 @@ const props = defineProps({
             :key="i"
             class="flex items-center justify-center"
           >
-            <div v-for="(result, i) in starter" :key="i">
-              <Number :number="result" />
-            </div>
+            <Number :number="starter" />
           </div>
         </div>
       </div>
@@ -107,9 +99,7 @@ const props = defineProps({
             :key="i"
             class="flex items-center justify-center"
           >
-            <div v-for="(result, i) in consolation" :key="i">
-              <Number :number="result" />
-            </div>
+            <Number :number="consolation" />
           </div>
         </div>
       </div>

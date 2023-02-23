@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BreedingRhombusSpinner } from "epic-spinners";
+import { LoopingRhombusesSpinner } from "epic-spinners";
 
 const props = defineProps({
   number: String,
@@ -12,10 +12,10 @@ const props = defineProps({
       {{ number }}
     </div>
 
-    <div v-else class="ml-2">
-      <breeding-rhombus-spinner
-        :animation-duration="2000"
-        :size="12"
+    <div v-else class="py-1">
+      <looping-rhombuses-spinner
+        :animation-duration="1000"
+        :size="14"
         color="#216900"
       />
     </div>
