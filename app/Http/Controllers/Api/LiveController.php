@@ -34,31 +34,32 @@ class LiveController extends Controller
     }
 
     protected function setLiveDraw(){
-        $consolation = explode(',', $this->getLiveResult()->consolation);
-        $starter = explode(',', $this->getLiveResult()->starter);
+        $result = $this->getLiveResult();
+        $consolation = explode(',', $result->consolation);
+        $starter = explode(',', $result->starter);
 
         return [
             'consolation' => [
-                $this->checkHideOrShowNumber(60, $consolation[0]),
-                $this->checkHideOrShowNumber(120, $consolation[1]),
-                $this->checkHideOrShowNumber(180, $consolation[2]),
-                $this->checkHideOrShowNumber(240, $consolation[3]),
-                $this->checkHideOrShowNumber(300, $consolation[4]),
-                $this->checkHideOrShowNumber(360, $consolation[5]),
+                $this->checkHideOrShowNumber(360, $consolation[0]),
+                $this->checkHideOrShowNumber(300, $consolation[1]),
+                $this->checkHideOrShowNumber(240, $consolation[2]),
+                $this->checkHideOrShowNumber(180, $consolation[3]),
+                $this->checkHideOrShowNumber(120, $consolation[4]),
+                $this->checkHideOrShowNumber(60, $consolation[5]),
             ],
             'starter' => [
-                $this->checkHideOrShowNumber(420, $starter[0]),
-                $this->checkHideOrShowNumber(480, $starter[1]),
-                $this->checkHideOrShowNumber(540, $starter[2]),
-                $this->checkHideOrShowNumber(600, $starter[3]),
-                $this->checkHideOrShowNumber(660, $starter[4]),
-                $this->checkHideOrShowNumber(720, $starter[5]),
+                $this->checkHideOrShowNumber(720, $starter[0]),
+                $this->checkHideOrShowNumber(660, $starter[1]),
+                $this->checkHideOrShowNumber(600, $starter[2]),
+                $this->checkHideOrShowNumber(540, $starter[3]),
+                $this->checkHideOrShowNumber(480, $starter[4]),
+                $this->checkHideOrShowNumber(420, $starter[5]),
             ],
-            'thirdPrize' => $this->checkHideOrShowNumber(780, $this->getLiveResult()->third),
-            'secondPrize' => $this->checkHideOrShowNumber(840, $this->getLiveResult()->second),
-            'grandPrize' => $this->checkHideOrShowNumber(900, $this->getLiveResult()->first),
-            'date' => $this->getLiveResult()->created_at,
-            'periode' => $this->getLiveResult()->periode,
+            'thirdPrize' => $this->checkHideOrShowNumber(780, $result->third),
+            'secondPrize' => $this->checkHideOrShowNumber(840, $result->second),
+            'grandPrize' => $this->checkHideOrShowNumber(900, $result->first),
+            'date' => $result->created_at,
+            'periode' => $result->periode,
         ];
     }
 
