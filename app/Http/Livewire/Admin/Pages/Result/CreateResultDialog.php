@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Admin\Pages\Result;
 use Livewire\Component;
 use App\Models\Result;
 use Illuminate\Support\Carbon;
+use App\Pools\CheckTime;
+use App\Models\Constants\TimeConstant;
 
 class CreateResultDialog extends Component
 {
@@ -25,6 +27,24 @@ class CreateResultDialog extends Component
         'prize.third' => 'third',
     ];
 
+    protected function checkResultTime(){
+        $now = Carbon::now();
+
+        if ($now < Carbon::parse(TimeConstant::FIRST_FINISH_TIME)){
+            return Carbon::parse(TimeConstant::FIRST_FINISH_TIME);
+        }else if($now < Carbon::parse(TimeConstant::SECOND_FINISH_TIME)){
+            return Carbon::parse(TimeConstant::SECOND_FINISH_TIME);
+        }else if($now < Carbon::parse(TimeConstant::THIRD_FINISH_TIME)){
+            return Carbon::parse(TimeConstant::THIRD_FINISH_TIME);
+        }else if($now < Carbon::parse(TimeConstant::FOURTH_FINISH_TIME)){
+            return Carbon::parse(TimeConstant::FOURTH_FINISH_TIME);
+        }else{
+            return Carbon::parse(TimeConstant::FIRST_FINISH_TIME);
+        }
+
+        return null;
+    }
+
     public function init()
     {
         $dt = Carbon::now();
@@ -43,6 +63,7 @@ class CreateResultDialog extends Component
     public function submit()
     {
         $this->validate($this->rules, [], $this->validationAttributes);
+        $resultTime = $this->checkResultTime();
 
         try {
             Result::create([
@@ -53,7 +74,7 @@ class CreateResultDialog extends Component
                 'starter' => random_int(1000, 9999) . "," . random_int(1000, 9999) . "," . random_int(1000, 9999) .  "," . random_int(1000, 9999) . "," . random_int(1000, 9999) . "," .random_int(1000, 9999),
                 'consolation' => random_int(1000, 9999) . "," . random_int(1000, 9999) . "," . random_int(1000, 9999) .  "," . random_int(1000, 9999) . "," . random_int(1000, 9999) . "," .random_int(1000, 9999),
                 'complete' => 0,
-                'created_at' => Carbon::parse($this->date),
+                'created_at' => Carbon::parse($this->date)->addHour($resultTime->hour)->addMinute($resultTime->minute)->subMinutes(2),
             ]);
         } catch (\Exception $e) {
             return $this->dispatchBrowserEvent('flash', ['type' => 'error', 'message' => 'Terjadi Kesalahan Mohon Ulangi Kembali!']);

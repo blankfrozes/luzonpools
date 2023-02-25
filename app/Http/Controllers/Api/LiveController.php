@@ -67,7 +67,7 @@ class LiveController extends Controller
     {
         $response = $this->setLiveDraw();
 
-        CheckTime::checkFirstLiveDraw(900) ? $this->setLiveDrawToComplete() : null;
+        CheckTime::checkFirstLiveDraw(950) ? $this->setLiveDrawToComplete() : null;
 
         return response()->json($response);
     }
