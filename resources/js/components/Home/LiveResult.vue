@@ -1,10 +1,20 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted, computed } from "vue";
 import LiveResultBox from "@/components/LiveResultBox.vue";
 import { useAsyncState } from "@vueuse/core";
 import { getLivedrawResult } from "@/services/livedraw.js";
 
-const { state: liveResult, isReady } = useAsyncState(getLivedrawResult(), {});
+const { state, isReady, execute } = useAsyncState(() => {
+  return getLivedrawResult();
+}, {});
+
+const liveResult = computed(() => state.value);
+
+onMounted(() => {
+  setInterval(async () => {
+    execute(0);
+  }, 10000);
+});
 </script>
 
 <template>
@@ -17,6 +27,10 @@ const { state: liveResult, isReady } = useAsyncState(getLivedrawResult(), {});
       <div class="w-full" v-if="isReady">
         <LiveResultBox :result="liveResult" />
       </div>
+
+      <!-- <div class="w-full" v-else>
+        <LiveResultBox :result="liveResult" />
+      </div> -->
     </div>
 
     <div class="flex-1 w-full md:w-auto">
