@@ -12,12 +12,8 @@ const props = defineProps({
       {{ number }}
     </div>
 
-    <div v-else class="py-1">
-      <looping-rhombuses-spinner
-        :animation-duration="1000"
-        :size="14"
-        color="#003481"
-      />
+    <div v-else class="py-[4px]">
+      <looping-rhombuses-spinner :animation-duration="1000" :size="14" color="#003481" />
     </div>
   </div>
 </template>
